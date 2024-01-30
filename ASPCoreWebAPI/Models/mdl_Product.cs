@@ -2,7 +2,7 @@
 
 namespace ASPCoreWebAPI.Models
 {
-    public class mdl_Product
+    public class Mdl_Product
     {
         public int P_id { get; set; }
         public string P_Name { get; set; }

@@ -24,7 +24,7 @@ namespace ASPCoreWebAPI.Controllers
 
         [Route("api/[Controller]/GetAllProducts")]
         [HttpGet]
-        public IEnumerable<mdl_Product> GetAllProducts()
+        public IEnumerable<Mdl_Product> GetAllProducts()
         {
             try
             {
@@ -39,11 +39,11 @@ namespace ASPCoreWebAPI.Controllers
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            List<mdl_Product> products = new List<mdl_Product>();
+                            List<Mdl_Product> products = new List<Mdl_Product>();
 
                             while (reader.Read())
                             {
-                                mdl_Product product = new mdl_Product
+                                Mdl_Product product = new Mdl_Product
                                 {
                                     P_id = Convert.ToInt32(reader["P_id"]),
                                     P_Name = reader["P_Name"].ToString(),
@@ -72,7 +72,7 @@ namespace ASPCoreWebAPI.Controllers
 
         [Route("api/[Controller]/CreateProduct")]
         [HttpPost]
-        public IActionResult CreateProduct([FromBody] mdl_Product request)
+        public IActionResult CreateProduct([FromBody] Mdl_Product request)
         {
             try
             {
@@ -172,7 +172,7 @@ namespace ASPCoreWebAPI.Controllers
                         {
                             if (reader.Read())
                             {
-                                mdl_Product product = new mdl_Product
+                                Mdl_Product product = new Mdl_Product
                                 {
                                     P_id = Convert.ToInt32(reader["P_id"]),
                                     P_Name = reader["P_Name"].ToString(),
@@ -204,7 +204,7 @@ namespace ASPCoreWebAPI.Controllers
 
         [Route("api/[Controller]/UpdateProduct/{P_id}")]
         [HttpPut]
-        public IActionResult UpdateProduct(int P_id, [FromBody] mdl_Product request)
+        public IActionResult UpdateProduct(int P_id, [FromBody] Mdl_Product request)
         {
             try
             {
